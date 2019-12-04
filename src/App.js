@@ -1,23 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TodoItem from "./TodoItem"
+import todosData from "./todosData"
 
 function App() {
-  return (
-    <div>
-      <input type="checkbox" />
-      <p>Placeholder text here</p>
-      
-      <input type="checkbox" />
-      <p>Placeholder text here</p>
-      
-      <input type="checkbox" />
-      <p>Placeholder text here</p>
-      
-      <input type="checkbox" />
-      <p>Placeholder text here</p>
-    </div>
-  );
+    const todoItems = todosData.map(item => <TodoItem key={item.id} item={item}/>)
+    
+    return (
+        <div className="todo-list">
+            {todoItems}
+        </div>
+    )
 }
+
 
 export default App;
